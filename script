@@ -1,0 +1,1448 @@
+/* =====================================================
+   EASTERN MEADOWS - MAIN JAVASCRIPT
+===================================================== */
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const mobileToggle = document.getElementById("mobileToggle");
+const navlinks = document.getElementById("navlinks");
+
+if (mobileToggle && navlinks) {
+
+    mobileToggle.addEventListener("click", function () {
+        navlinks.classList.toggle("open");
+    });
+
+}
+
+
+/* =========================================
+   HEADER SCROLL
+========================================= */
+
+const header = document.getElementById("header");
+
+if (header) {
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
+
+}
+
+
+/* =========================================
+   CLOSE MOBILE MENU
+========================================= */
+
+if (navlinks) {
+
+    document.querySelectorAll(".navlinks a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+            navlinks.classList.remove("open");
+        });
+
+    });
+
+}
+
+
+/* =========================================
+   MAIN ENQUIRY FORM
+========================================= */
+
+const form = document.getElementById("leadForm");
+const toast = document.getElementById("toast");
+
+if (form) {
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        const name =
+            String(formData.get("name") || "").trim();
+
+        const phone =
+            String(formData.get("phone") || "").trim();
+
+        const email =
+            String(formData.get("email") || "").trim();
+
+        const message =
+            String(formData.get("message") || "").trim();
+
+
+        if (!name) {
+
+            showToast("Please enter your name.");
+            return;
+
+        }
+
+
+        if (!phone) {
+
+            showToast("Please enter your phone number.");
+            return;
+
+        }
+
+
+        console.log({
+            name: name,
+            phone: phone,
+            email: email,
+            message: message
+        });
+
+
+        showToast(
+            "Thank you " +
+            name +
+            "! Your enquiry has been received."
+        );
+
+
+        form.reset();
+
+    });
+
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+function showToast(message) {
+
+    const toastElement =
+        document.getElementById("toast");
+
+    if (!toastElement) {
+        alert(message);
+        return;
+    }
+
+    toastElement.textContent = message;
+
+    toastElement.classList.add("show");
+
+    setTimeout(function () {
+
+        toastElement.classList.remove("show");
+
+    }, 4000);
+
+}
+
+
+/* =====================================================
+   CHATBOX
+===================================================== */
+
+
+/* -----------------------------------------
+   OPEN / CLOSE CHAT
+----------------------------------------- */
+
+function toggleChat() {
+
+    const chatPopup =
+        document.getElementById("chatPopup");
+
+    if (!chatPopup) {
+        console.error("Chat popup not found: #chatPopup");
+        return;
+    }
+
+    chatPopup.classList.toggle("active");
+
+}
+
+
+function closeChat() {
+
+    const chatPopup =
+        document.getElementById("chatPopup");
+
+    if (!chatPopup) {
+        return;
+    }
+
+    chatPopup.classList.remove("active");
+
+}
+
+
+/* -----------------------------------------
+   CHAT ENQUIRE NOW
+----------------------------------------- */
+
+function chatEnquire() {
+
+    /* Close chatbot */
+
+    closeChat();
+
+
+    /* Open enquiry form */
+
+    const overlay =
+        document.getElementById("enquiryOverlay");
+
+    if (overlay) {
+
+        overlay.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    } else {
+
+        /* Fallback */
+
+        const contact =
+            document.getElementById("contact");
+
+        if (contact) {
+
+            contact.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   CHAT CALL US
+----------------------------------------- */
+
+function chatCall() {
+
+    window.location.href =
+        "tel:+919962944444";
+
+}
+
+
+/* -----------------------------------------
+   CHAT WHATSAPP
+----------------------------------------- */
+
+function chatWhatsApp() {
+
+    const message =
+        "Hello Eastern Meadows, I am interested in your project.";
+
+    const whatsappURL =
+        "https://wa.me/919962944444?text=" +
+        encodeURIComponent(message);
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+/* -----------------------------------------
+   AUTO OPEN CHAT
+----------------------------------------- */
+
+window.addEventListener("load", function () {
+
+    setTimeout(function () {
+
+        const chatPopup =
+            document.getElementById("chatPopup");
+
+        if (chatPopup) {
+
+            chatPopup.classList.add("active");
+
+        }
+
+    }, 2500);
+
+});
+
+
+/* =====================================================
+   ENQUIRY POPUP
+===================================================== */
+
+
+/* -----------------------------------------
+   OPEN ENQUIRY
+----------------------------------------- */
+
+function openEnquiryForm() {
+
+    const overlay =
+        document.getElementById("enquiryOverlay");
+
+    if (!overlay) {
+
+        console.error(
+            "Enquiry overlay not found: #enquiryOverlay"
+        );
+
+        return;
+
+    }
+
+    overlay.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+/* -----------------------------------------
+   CLOSE ENQUIRY
+----------------------------------------- */
+
+function closeEnquiryForm() {
+
+    const overlay =
+        document.getElementById("enquiryOverlay");
+
+    if (!overlay) {
+        return;
+    }
+
+    overlay.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* -----------------------------------------
+   CLOSE ENQUIRY OUTSIDE
+----------------------------------------- */
+
+document.addEventListener("click", function (event) {
+
+    const overlay =
+        document.getElementById("enquiryOverlay");
+
+    if (
+        overlay &&
+        event.target === overlay
+    ) {
+
+        closeEnquiryForm();
+
+    }
+
+});
+
+
+/* -----------------------------------------
+   ESCAPE KEY
+----------------------------------------- */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        closeChat();
+
+        closeEnquiryForm();
+
+    }
+
+});
+
+
+/* =====================================================
+   CHATBOX BUTTON - EXTRA SAFETY
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const chatButton =
+        document.querySelector(".chat-button");
+
+    const chatPopup =
+        document.getElementById("chatPopup");
+
+
+    if (chatButton && chatPopup) {
+
+        chatButton.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            chatPopup.classList.toggle("active");
+
+        });
+
+    }
+
+
+    /* Chat option buttons */
+
+    document
+        .querySelectorAll(".chat-option")
+        .forEach(function (option) {
+
+            option.addEventListener("click", function () {
+
+                const action =
+                    option.getAttribute("data-action");
+
+
+                if (action === "enquire") {
+                    chatEnquire();
+                }
+
+
+                if (action === "call") {
+                    chatCall();
+                }
+
+
+                if (action === "whatsapp") {
+                    chatWhatsApp();
+                }
+
+            });
+
+        });
+
+});
+/* =========================================================
+   EASTERN MEADOWS — PREMIUM CONTACT SYSTEM JS
+========================================================= */
+
+(function () {
+
+    "use strict";
+
+    /* =====================================================
+       CONFIGURATION
+    ===================================================== */
+
+    const EM_WHATSAPP_NUMBER = "919962944444";
+
+    const emSystem =
+        document.querySelector(".em-contact-system");
+
+    const emMainContact =
+        document.getElementById("emMainContact");
+
+    const emChatWindow =
+        document.getElementById("emChatWindow");
+
+    const emChatBody =
+        document.getElementById("emChatBody");
+
+    const emChatInput =
+        document.getElementById("emChatInput");
+
+    const emChatNotification =
+        document.getElementById("emChatNotification");
+
+    const emEnquiryOverlay =
+        document.getElementById("emEnquiryOverlay");
+
+
+    /* =====================================================
+       CONTACT ACTION MENU
+    ===================================================== */
+
+    window.emToggleActions = function () {
+
+        if (!emSystem) return;
+
+        emSystem.classList.toggle("em-actions-open");
+
+    };
+
+
+    /* =====================================================
+       CLOSE ACTION MENU
+    ===================================================== */
+
+    window.emCloseActions = function () {
+
+        if (!emSystem) return;
+
+        emSystem.classList.remove("em-actions-open");
+
+    };
+
+
+    /* =====================================================
+       CHAT OPEN
+    ===================================================== */
+
+    window.emOpenChat = function () {
+
+        if (!emChatWindow) return;
+
+        emChatWindow.classList.add("em-chat-open");
+
+        emChatWindow.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        if (emChatNotification) {
+            emChatNotification.style.display = "none";
+        }
+
+        if (emSystem) {
+            emSystem.classList.remove("em-actions-open");
+        }
+
+        setTimeout(function () {
+
+            if (emChatInput) {
+                emChatInput.focus();
+            }
+
+        }, 350);
+
+    };
+
+
+    /* =====================================================
+       CHAT CLOSE
+    ===================================================== */
+
+    window.emCloseChat = function () {
+
+        if (!emChatWindow) return;
+
+        emChatWindow.classList.remove("em-chat-open");
+
+        emChatWindow.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    };
+
+
+    /* =====================================================
+       NOTIFICATION CLOSE
+    ===================================================== */
+
+    window.emCloseNotification = function (event) {
+
+        if (event) {
+            event.stopPropagation();
+        }
+
+        if (emChatNotification) {
+            emChatNotification.style.display = "none";
+        }
+
+    };
+
+
+    /* =====================================================
+       CLICK NOTIFICATION TO OPEN CHAT
+    ===================================================== */
+
+    if (emChatNotification) {
+
+        emChatNotification.addEventListener(
+            "click",
+            function () {
+
+                emOpenChat();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ENQUIRY MODAL
+    ===================================================== */
+
+    window.emOpenEnquiry = function () {
+
+        if (!emEnquiryOverlay) return;
+
+        emEnquiryOverlay.classList.add(
+            "em-modal-open"
+        );
+
+        document.body.style.overflow = "hidden";
+
+        if (emSystem) {
+            emSystem.classList.remove(
+                "em-actions-open"
+            );
+        }
+
+    };
+
+
+    window.emCloseEnquiry = function () {
+
+        if (!emEnquiryOverlay) return;
+
+        emEnquiryOverlay.classList.remove(
+            "em-modal-open"
+        );
+
+        document.body.style.overflow = "";
+
+    };
+
+
+    window.emOverlayClose = function (event) {
+
+        if (
+            event.target === emEnquiryOverlay
+        ) {
+
+            emCloseEnquiry();
+
+        }
+
+    };
+
+
+    /* =====================================================
+       WHATSAPP
+    ===================================================== */
+
+    window.emOpenWhatsApp = function (type) {
+
+        let message = "";
+
+        switch (type) {
+
+            case "amenities":
+
+                message =
+                    "Hello Eastern Meadows, I would like to know more about the amenities and clubhouse facilities.";
+
+                break;
+
+
+            case "masterplan":
+
+                message =
+                    "Hello Eastern Meadows, I have viewed the master plan and would like more information about the available plots.";
+
+                break;
+
+
+            case "location":
+
+                message =
+                    "Hello Eastern Meadows, I would like to know more about the project location and connectivity.";
+
+                break;
+
+
+            case "visit":
+
+                message =
+                    "Hello Eastern Meadows, I would like to schedule a site visit.";
+
+                break;
+
+
+            case "project":
+
+                message =
+                    "Hello Eastern Meadows, I would like to know more about the project, available plots and pricing.";
+
+                break;
+
+
+            default:
+
+                message =
+                    "Hello Eastern Meadows, I am interested in the project and would like to know more details.";
+
+        }
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            EM_WHATSAPP_NUMBER +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(
+            whatsappURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    };
+
+
+    /* =====================================================
+       BOT QUICK RESPONSE
+    ===================================================== */
+
+    window.emBotReply = function (type) {
+
+        let userText = "";
+
+        switch (type) {
+
+            case "project":
+
+                userText =
+                    "Tell me about the project";
+
+                break;
+
+
+            case "amenities":
+
+                userText =
+                    "What amenities are available?";
+
+                break;
+
+
+            case "masterplan":
+
+                userText =
+                    "I want to see the master plan";
+
+                break;
+
+
+            case "location":
+
+                userText =
+                    "Where is Eastern Meadows located?";
+
+                break;
+
+
+            case "visit":
+
+                userText =
+                    "I want to book a site visit";
+
+                break;
+
+        }
+
+
+        if (userText) {
+
+            emAddUserMessage(userText);
+
+            setTimeout(function () {
+
+                emGenerateBotResponse(type);
+
+            }, 450);
+
+        }
+
+    };
+
+
+    /* =====================================================
+       BOT RESPONSE ENGINE
+    ===================================================== */
+
+    function emGenerateBotResponse(type) {
+
+        let html = "";
+
+        switch (type) {
+
+            case "project":
+
+                html = `
+                    <strong>🌿 Eastern Meadows</strong><br><br>
+
+                    Eastern Meadows is presented as a
+                    <strong>170-acre integrated township
+                    at Ghatkesar</strong>.
+
+                    <br><br>
+
+                    The project is planned around
+                    residential plots, green spaces,
+                    recreation and community facilities.
+
+                    <div class="em-response-buttons">
+
+                        <button onclick="emBotReply('amenities')">
+                            Explore Amenities
+                        </button>
+
+                        <button onclick="emBotReply('masterplan')">
+                            Master Plan
+                        </button>
+
+                        <button onclick="emBotReply('visit')">
+                            Book Visit
+                        </button>
+
+                    </div>
+                `;
+
+                break;
+
+
+            case "amenities":
+
+                html = `
+                    <strong>✨ Project Amenities</strong><br><br>
+
+                    Eastern Meadows showcases:
+
+                    <br><br>
+
+                    🚴 Cycling Track<br>
+                    🚶 Walking Track<br>
+                    🏃 Jogging Track<br>
+                    🎾 Tennis<br>
+                    🏸 Badminton<br>
+                    🏀 Basketball<br>
+                    🛝 Children's Play Area<br>
+                    🐕 Pet Park<br>
+                    🌳 Avenue Plantation<br>
+                    💡 Street Lighting<br>
+                    🛡 24/7 Security<br>
+                    🛣 BT Roads
+
+                    <div class="em-response-buttons">
+
+                        <button onclick="emOpenWhatsApp('amenities')">
+                            Ask on WhatsApp
+                        </button>
+
+                        <button onclick="emBotReply('visit')">
+                            Book Visit
+                        </button>
+
+                    </div>
+                `;
+
+                break;
+
+
+            case "masterplan":
+
+                html = `
+                    <strong>🗺 Master Plan</strong><br><br>
+
+                    You can explore the Eastern Meadows
+                    master plan directly on the website.
+
+                    <br><br>
+
+                    The plan shows the proposed roads,
+                    plots, parks and social infrastructure.
+
+                    <div class="em-response-buttons">
+
+                        <button onclick="emGoToSection('masterplan')">
+                            View Master Plan
+                        </button>
+
+                        <button onclick="emOpenWhatsApp('masterplan')">
+                            Ask on WhatsApp
+                        </button>
+
+                    </div>
+                `;
+
+                break;
+
+
+            case "location":
+
+                html = `
+                    <strong>📍 Eastern Meadows</strong><br><br>
+
+                    The project is located at
+                    <strong>Ghatkesar, Hyderabad</strong>.
+
+                    <br><br>
+
+                    Key connectivity references include:
+
+                    <br><br>
+
+                    • Ghatkesar<br>
+                    • ORR<br>
+                    • Pocharam<br>
+                    • Highway
+
+                    <div class="em-response-buttons">
+
+                        <button onclick="emGoToSection('masterplan')">
+                            Explore Location
+                        </button>
+
+                        <button onclick="emOpenWhatsApp('location')">
+                            Ask on WhatsApp
+                        </button>
+
+                    </div>
+                `;
+
+                break;
+
+
+            case "visit":
+
+                html = `
+                    <strong>📅 Let's arrange your visit.</strong>
+                    <br><br>
+
+                    Our team can help you schedule
+                    a visit to Eastern Meadows.
+
+                    <br><br>
+
+                    Please share your details and
+                    preferred date.
+
+                    <div class="em-response-buttons">
+
+                        <button onclick="emOpenEnquiry()">
+                            Book Site Visit
+                        </button>
+
+                        <button onclick="emOpenWhatsApp('visit')">
+                            WhatsApp Team
+                        </button>
+
+                    </div>
+                `;
+
+                break;
+
+
+            default:
+
+                html = `
+                    I can help you with
+                    <strong>project details, amenities,
+                    master plan, location and site visits.</strong>
+
+                    <br><br>
+
+                    Please select an option below.
+                `;
+
+        }
+
+
+        emAddBotMessage(html);
+
+    }
+
+
+    /* =====================================================
+       ADD USER MESSAGE
+    ===================================================== */
+
+    function emAddUserMessage(text) {
+
+        if (!emChatBody) return;
+
+        const wrapper =
+            document.createElement("div");
+
+        wrapper.className =
+            "em-user-message";
+
+        wrapper.innerHTML = `
+            <div class="em-user-bubble">
+                ${emEscapeHTML(text)}
+            </div>
+        `;
+
+        emChatBody.appendChild(wrapper);
+
+        emScrollChat();
+
+    }
+
+
+    /* =====================================================
+       ADD BOT MESSAGE
+    ===================================================== */
+
+    function emAddBotMessage(html) {
+
+        if (!emChatBody) return;
+
+        const wrapper =
+            document.createElement("div");
+
+        wrapper.className =
+            "em-bot-response";
+
+        wrapper.innerHTML = `
+
+            <div class="em-message-avatar">
+                E
+            </div>
+
+            <div class="em-message-content">
+
+                <span class="em-message-time">
+                    Eastern Meadows Assistant
+                </span>
+
+                <div class="em-message-bubble">
+                    ${html}
+                </div>
+
+            </div>
+
+        `;
+
+        emChatBody.appendChild(wrapper);
+
+        emScrollChat();
+
+    }
+
+
+    /* =====================================================
+       SEND TEXT MESSAGE
+    ===================================================== */
+
+    window.emSendMessage = function () {
+
+        if (!emChatInput) return;
+
+        const message =
+            emChatInput.value.trim();
+
+        if (!message) return;
+
+        emAddUserMessage(message);
+
+        emChatInput.value = "";
+
+        setTimeout(function () {
+
+            emProcessText(message);
+
+        }, 500);
+
+    };
+
+
+    /* =====================================================
+       ENTER KEY
+    ===================================================== */
+
+    window.emHandleChatKey = function (event) {
+
+        if (event.key === "Enter") {
+
+            event.preventDefault();
+
+            emSendMessage();
+
+        }
+
+    };
+
+
+    /* =====================================================
+       SIMPLE CHAT INTELLIGENCE
+    ===================================================== */
+
+    function emProcessText(message) {
+
+        const text =
+            message.toLowerCase();
+
+
+        if (
+            text.includes("amenit") ||
+            text.includes("facility") ||
+            text.includes("facilities") ||
+            text.includes("clubhouse") ||
+            text.includes("club house")
+        ) {
+
+            emGenerateBotResponse("amenities");
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("master") ||
+            text.includes("layout") ||
+            text.includes("plan")
+        ) {
+
+            emGenerateBotResponse("masterplan");
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("location") ||
+            text.includes("where") ||
+            text.includes("connect") ||
+            text.includes("ghatkesar")
+        ) {
+
+            emGenerateBotResponse("location");
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("visit") ||
+            text.includes("site")
+        ) {
+
+            emGenerateBotResponse("visit");
+
+            return;
+
+        }
+
+
+        if (
+            text.includes("project") ||
+            text.includes("about") ||
+            text.includes("eastern")
+        ) {
+
+            emGenerateBotResponse("project");
+
+            return;
+
+        }
+
+
+        emAddBotMessage(`
+            I can help you with:
+
+            <br><br>
+
+            🏡 Project Details<br>
+            ✨ Amenities<br>
+            🗺 Master Plan<br>
+            📍 Location<br>
+            📅 Site Visit
+
+            <div class="em-response-buttons">
+
+                <button onclick="emBotReply('project')">
+                    Project
+                </button>
+
+                <button onclick="emBotReply('amenities')">
+                    Amenities
+                </button>
+
+                <button onclick="emBotReply('location')">
+                    Location
+                </button>
+
+                <button onclick="emBotReply('visit')">
+                    Site Visit
+                </button>
+
+            </div>
+        `);
+
+    }
+
+
+    /* =====================================================
+       SCROLL CHAT
+    ===================================================== */
+
+    function emScrollChat() {
+
+        if (!emChatBody) return;
+
+        setTimeout(function () {
+
+            emChatBody.scrollTo({
+                top: emChatBody.scrollHeight,
+                behavior: "smooth"
+            });
+
+        }, 50);
+
+    }
+
+
+    /* =====================================================
+       GO TO WEBSITE SECTION
+    ===================================================== */
+
+    window.emGoToSection = function (sectionId) {
+
+        emCloseChat();
+
+        setTimeout(function () {
+
+            const section =
+                document.getElementById(sectionId);
+
+            if (section) {
+
+                section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        }, 200);
+
+    };
+
+
+    /* =====================================================
+       ENQUIRY SUBMISSION
+    ===================================================== */
+
+    window.emSubmitEnquiry = function (event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("emName").value.trim();
+
+        const phone =
+            document.getElementById("emPhone").value.trim();
+
+        const email =
+            document.getElementById("emEmail").value.trim();
+
+        const date =
+            document.getElementById("emVisitDate").value;
+
+        const time =
+            document.getElementById("emVisitTime").value;
+
+        const interest =
+            document.getElementById("emInterest").value;
+
+        const whatsapp =
+            document.getElementById(
+                "emWhatsAppUpdates"
+            ).checked;
+
+
+        if (!/^[0-9]{10}$/.test(phone)) {
+
+            alert(
+                "Please enter a valid 10-digit mobile number."
+            );
+
+            return;
+
+        }
+
+
+        let message =
+            "Hello Eastern Meadows,%0A%0A" +
+
+            "I would like to enquire about the project.%0A%0A" +
+
+            "Name: " +
+            encodeURIComponent(name) +
+
+            "%0APhone: " +
+            encodeURIComponent(phone);
+
+
+        if (email) {
+
+            message +=
+                "%0AEmail: " +
+                encodeURIComponent(email);
+
+        }
+
+
+        if (date) {
+
+            message +=
+                "%0APreferred Visit Date: " +
+                encodeURIComponent(date);
+
+        }
+
+
+        if (time) {
+
+            message +=
+                "%0APreferred Time: " +
+                encodeURIComponent(time);
+
+        }
+
+
+        message +=
+            "%0AInterested In: " +
+            encodeURIComponent(interest);
+
+
+        if (whatsapp) {
+
+            message +=
+                "%0A%0AI would also like to receive updates on WhatsApp.";
+
+        }
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            EM_WHATSAPP_NUMBER +
+            "?text=" +
+            message;
+
+
+        emCloseEnquiry();
+
+
+        /*
+         * Open WhatsApp after submission.
+         * This makes the enquiry functional immediately
+         * without requiring a backend.
+         */
+
+        window.open(
+            whatsappURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+
+        /*
+         * Reset form
+         */
+
+        const form =
+            document.getElementById(
+                "emEnquiryForm"
+            );
+
+        if (form) {
+            form.reset();
+        }
+
+    };
+
+
+    /* =====================================================
+       ESCAPE HTML
+    ===================================================== */
+
+    function emEscapeHTML(text) {
+
+        const div =
+            document.createElement("div");
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+    }
+
+
+    /* =====================================================
+       INITIAL NOTIFICATION
+       Appears after 8 seconds.
+    ===================================================== */
+
+    setTimeout(function () {
+
+        if (
+            emChatNotification &&
+            emChatWindow &&
+            !emChatWindow.classList.contains(
+                "em-chat-open"
+            )
+        ) {
+
+            emChatNotification.style.display =
+                "flex";
+
+        }
+
+    }, 8000);
+
+
+    /* =====================================================
+       ESC KEY
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key !== "Escape") {
+                return;
+            }
+
+            emCloseChat();
+
+            emCloseEnquiry();
+
+        }
+    );
+
+
+    /* =====================================================
+       PREVENT BACKGROUND SCROLL WHEN MODAL OPEN
+    ===================================================== */
+
+    window.addEventListener(
+        "beforeunload",
+        function () {
+
+            document.body.style.overflow = "";
+
+        }
+    );
+
+
+})();

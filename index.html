@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eastern Meadows | Ghatkesar | Indhu Infra</title>
+<meta name="description" content="Eastern Meadows at Ghatkesar - 170 acres integrated township by Akshita Infra.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* =========================================================
+   HERO AMENITIES
+   Placed directly below the 170 / 75,000 / 4 / 15 stats
+   ========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 4;
+}
+
+/* Space between statistics and amenities */
+.hero-amenities {
+    width: 100%;
+    margin-top: 34px;
+    padding-bottom: 24px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Heading */
+.amenities-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.amenities-heading::before,
+.amenities-heading::after {
+    content: "";
+    height: 1px;
+    background: rgba(255,255,255,0.65);
+    flex: 1;
+}
+
+.amenities-heading h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+}
+
+/* Viewport */
+.amenities-slider {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Continuous track */
+.amenities-track {
+    display: flex;
+    width: max-content;
+    gap: 14px;
+    animation: amenitiesScroll 36s linear infinite;
+    will-change: transform;
+}
+
+/* Amenity cards */
+.hero-amenity-card {
+    width: 135px;
+    height: 88px;
+    flex: 0 0 135px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 11px;
+    border: 2px solid rgba(255,255,255,0.78);
+    background: #222;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.35);
+}
+
+.hero-amenity-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-amenity-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.82),
+        rgba(0,0,0,0.05) 65%
+    );
+}
+
+.hero-amenity-card span {
+    position: absolute;
+    left: 9px;
+    bottom: 7px;
+    z-index: 2;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.9);
+}
+
+/* Seamless continuous movement */
+@keyframes amenitiesScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-50% - 7px));
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .hero-amenities {
+        margin-top: 24px;
+        padding-bottom: 16px;
+    }
+
+    .amenities-heading {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .amenities-heading h3 {
+        font-size: 12px;
+        letter-spacing: 0.8px;
+    }
+
+    .amenities-track {
+        gap: 9px;
+        animation-duration: 28s;
+    }
+
+    .hero-amenity-card {
+        width: 105px;
+        height: 70px;
+        flex-basis: 105px;
+        border-radius: 9px;
+    }
+
+    .hero-amenity-card span {
+        left: 7px;
+        bottom: 5px;
+        font-size: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .amenities-track {
+        animation: none;
+    }
+}
+</style>
+
+<style>
+/* =========================================================
+   DIRECT CONTACT BUTTONS - NO OVERLAP
+   ========================================================= */
+.em-direct-contact {
+    position: fixed;
+    right: 24px;
+    bottom: 145px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 99997;
+}
+
+.em-direct-btn {
+    width: 52px;
+    height: 52px;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 7px 20px rgba(0,0,0,.22);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.em-direct-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.em-phone-btn {
+    background: #193b29;
+}
+
+.em-whatsapp-btn {
+    background: #20b858;
+}
+
+.em-direct-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 10px 25px rgba(0,0,0,.28);
+}
+
+.em-direct-btn:active {
+    transform: scale(.96);
+}
+
+/* Keep the automatic notification away from the fixed buttons */
+.em-chat-notification {
+    bottom: 25px !important;
+    right: 95px !important;
+}
+
+@media (max-width: 700px) {
+    .em-direct-contact {
+        right: 14px;
+        bottom: 135px;
+        gap: 8px;
+    }
+
+    .em-direct-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .em-direct-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .em-chat-notification {
+        right: 72px !important;
+        bottom: 75px !important;
+        max-width: calc(100vw - 95px) !important;
+    }
+}
+</style>
+
+<style>
+/* FINAL CONTACT LAYOUT OVERRIDE */
+.em-direct-contact {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 145px !important;
+    z-index: 99997 !important;
+}
+
+@media (max-width: 700px) {
+    .em-direct-contact {
+        right: 14px !important;
+        bottom: 135px !important;
+    }
+}
+</style>
+
+<style>
+/* PROFESSIONAL FOOTER */
+.em-professional-footer{background:#373d45;color:#f5f5f5;padding:58px 0 20px}
+.em-footer-container{width:min(1380px,calc(100% - 70px));margin:0 auto}
+.em-footer-title{color:#f3ad3c;font-size:32px;font-weight:500;margin-bottom:34px}
+.em-footer-grid{display:grid;grid-template-columns:1.05fr 1.35fr .85fr .9fr;gap:48px}
+.em-footer-column{min-width:0}
+.em-footer-column h4{margin:0 0 12px;color:#fff;font-size:14px;font-weight:800}
+.em-footer-column strong{display:block;font-size:14px;margin-bottom:3px}
+.em-footer-column p{margin:0 0 13px;color:#e6e8eb;font-size:13px;line-height:1.65}
+.em-footer-column span{color:#fff}
+.em-footer-column a{display:block;width:max-content;max-width:100%;color:#f0f1f2;text-decoration:none;font-size:13px;line-height:1.65;transition:.2s}
+.em-footer-column a:hover{color:#f3ad3c}
+.em-footer-call,.em-footer-whatsapp{display:inline-block!important;margin-top:5px;padding:11px 16px;border-radius:5px;font-weight:700}
+.em-footer-call{background:#f3ad3c;color:#20252b!important}
+.em-footer-whatsapp{margin-left:7px;background:#1fae55;color:#fff!important}
+.em-footer-divider{height:1px;background:rgba(255,255,255,.16);margin:40px 0 17px}
+.em-footer-bottom{display:flex;justify-content:space-between;gap:20px;color:#c9cdd1;font-size:12px}
+@media(max-width:950px){.em-footer-grid{grid-template-columns:1fr 1fr;gap:35px 28px}}
+@media(max-width:600px){.em-professional-footer{padding:42px 0 18px}.em-footer-container{width:calc(100% - 36px)}.em-footer-title{font-size:27px;margin-bottom:28px}.em-footer-grid{grid-template-columns:1fr;gap:27px}.em-footer-bottom{flex-direction:column;gap:7px}.em-footer-call,.em-footer-whatsapp{margin-left:0;margin-right:5px}}
+</style>
+
+<style>
+/* COLORFUL DIRECT CONTACT ICONS */
+.em-direct-contact .em-phone-btn {
+    background: linear-gradient(135deg, #ff9f1c 0%, #ff5f6d 55%, #7b61ff 100%) !important;
+    color: #fff !important;
+}
+.em-direct-contact .em-whatsapp-btn {
+    background: #25D366 !important;
+    color: #fff !important;
+}
+.em-direct-contact .em-phone-btn svg,
+.em-direct-contact .em-whatsapp-btn svg {
+    width: 26px !important;
+    height: 26px !important;
+}
+/* Chatbot logo */
+.em-chat-logo {
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-size:0 !important;
+}
+.em-chat-logo svg {
+    width:25px;
+    height:25px;
+    display:block;
+}
+</style>
+
+
+<style>
+/* FINAL CONTACT ICONS */
+.em-direct-contact .em-phone-btn {
+    background: linear-gradient(135deg, #ff9800 0%, #ff4d6d 50%, #6c5ce7 100%) !important;
+    color: #ffffff !important;
+}
+.em-direct-contact .em-whatsapp-btn {
+    background: #25D366 !important;
+    color: #ffffff !important;
+}
+.em-direct-contact .em-phone-btn svg,
+.em-direct-contact .em-whatsapp-btn svg {
+    width: 28px !important;
+    height: 28px !important;
+    display: block !important;
+}
+
+/* Floating chatbot button */
+.em-main-contact {
+    background: linear-gradient(135deg, #ff9800, #f57c00) !important;
+}
+.em-main-plus {
+    display: flex !important;
+}
+.em-main-plus svg {
+    width: 27px !important;
+    height: 27px !important;
+}
+</style>
+
+<style id="final-contact-fix">
+/* FINAL CONTACT ICON + NOTIFICATION FIX */
+.em-direct-contact {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 145px !important;
+    z-index: 100001 !important;
+}
+.em-direct-contact .em-whatsapp-btn {
+    background: #25D366 !important;
+    color: #fff !important;
+}
+.em-direct-contact .em-whatsapp-btn svg {
+    width: 34px !important;
+    height: 34px !important;
+    display: block !important;
+}
+.em-direct-contact .em-phone-btn svg {
+    width: 31px !important;
+    height: 31px !important;
+    display: block !important;
+}
+.em-main-contact {
+    z-index: 100002 !important;
+}
+.em-main-plus svg {
+    width: 34px !important;
+    height: 34px !important;
+}
+.em-main-plus {
+    font-size: 0 !important;
+}
+.em-chat-logo {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    background: #f58b16 !important;
+    color: #fff !important;
+}
+.em-chat-logo svg {
+    width: 34px !important;
+    height: 34px !important;
+}
+.em-chat-notification {
+    z-index: 100003 !important;
+}
+.em-chat-notification.hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+.em-notification-close {
+    z-index: 10 !important;
+    cursor: pointer !important;
+}
+.em-notification-icon {
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+}
+.em-notification-icon svg {
+    width: 26px !important;
+    height: 26px !important;
+}
+@media (max-width:700px) {
+    .em-direct-contact {
+        right: 14px !important;
+        bottom: 135px !important;
+    }
+}
+</style>
+
+<style id="eastern-meadows-header-fix">
+/* =========================================================
+   EASTERN MEADOWS - PROFESSIONAL HEADER
+   ========================================================= */
+
+header#header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 88px !important;
+    padding: 0 !important;
+    z-index: 9999 !important;
+    background: rgba(4, 34, 18, 0.22) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+header#header .container {
+    width: min(1220px, calc(100% - 56px)) !important;
+    height: 100% !important;
+    margin: 0 auto !important;
+}
+
+header#header .main-nav {
+    width: 100% !important;
+    height: 100% !important;
+    display: grid !important;
+    grid-template-columns: minmax(280px, 1fr) auto minmax(165px, 1fr) !important;
+    align-items: center !important;
+    column-gap: 32px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ---------------- BRAND ---------------- */
+header#header .brand {
+    justify-self: start !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 11px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+header#header .brand-logo {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 46px !important;
+    border-radius: 13px !important;
+    background: linear-gradient(135deg, #f47b00, #ffb83f) !important;
+    color: #063d1b !important;
+    font-family: "DM Sans", Arial, sans-serif !important;
+    font-size: 19px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.18) !important;
+}
+
+header#header .brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+}
+
+header#header .brand-name {
+    display: block !important;
+    color: #fff !important;
+    font-family: "DM Sans", Arial, sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    letter-spacing: .01em !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header#header .marketed-by {
+    display: block !important;
+    color: #ffb83f !important;
+    font-family: "DM Sans", Arial, sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    letter-spacing: .2px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    margin: 4px 0 0 !important;
+    padding: 0 !important;
+}
+
+header#header .location {
+    display: block !important;
+    color: #ffb83f !important;
+    font-family: "DM Sans", Arial, sans-serif !important;
+    font-size: 8px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.45px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    text-transform: uppercase !important;
+    margin: 3px 0 0 !important;
+    padding: 0 !important;
+}
+
+/* ---------------- NAVIGATION ---------------- */
+header#header .navlinks {
+    justify-self: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #fff !important;
+}
+
+header#header .navlinks a {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 42px !important;
+    color: rgba(255,255,255,.94) !important;
+    font-family: "DM Sans", Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: color .2s ease, transform .2s ease !important;
+}
+
+header#header .navlinks a:hover {
+    color: #ffb83f !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ---------------- RIGHT ACTION ---------------- */
+header#header .nav-actions {
+    justify-self: end !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header#header .nav-actions .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 144px !important;
+    height: 46px !important;
+    padding: 0 22px !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #f47b00, #ff9400) !important;
+    color: #fff !important;
+    font-family: "DM Sans", Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    box-shadow: 0 8px 22px rgba(244,123,0,.25) !important;
+}
+
+header#header .nav-actions .btn:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Prevent old branding classes from affecting this header */
+header#header .logo,
+header#header .logo-text,
+header#header .brand-info,
+header#header .brand-title,
+header#header .brand-marketed,
+header#header .brand-location {
+    display: none !important;
+}
+
+/* ---------------- TABLET ---------------- */
+@media (max-width: 1100px) and (min-width: 901px) {
+    header#header .container {
+        width: min(1180px, calc(100% - 36px)) !important;
+    }
+
+    header#header .main-nav {
+        grid-template-columns: minmax(235px, 1fr) auto minmax(150px, 1fr) !important;
+        column-gap: 18px !important;
+    }
+
+    header#header .navlinks {
+        gap: 18px !important;
+    }
+
+    header#header .navlinks a {
+        font-size: 13px !important;
+    }
+
+    header#header .brand-logo {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        flex-basis: 42px !important;
+    }
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 900px) {
+    header#header {
+        height: 74px !important;
+    }
+
+    header#header .container {
+        width: calc(100% - 28px) !important;
+    }
+
+    header#header .main-nav {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    header#header .navlinks {
+        display: none !important;
+        position: absolute !important;
+        top: 68px !important;
+        left: 14px !important;
+        right: 14px !important;
+        width: auto !important;
+        height: auto !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+        padding: 12px !important;
+        background: rgba(3,35,16,.97) !important;
+        border: 1px solid rgba(255,255,255,.10) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 18px 45px rgba(0,0,0,.22) !important;
+    }
+
+    header#header .navlinks.open {
+        display: flex !important;
+    }
+
+    header#header .navlinks a {
+        height: 44px !important;
+        justify-content: flex-start !important;
+        padding: 0 12px !important;
+        border-radius: 10px !important;
+    }
+
+    header#header .navlinks a:hover {
+        background: rgba(255,255,255,.06) !important;
+    }
+
+    header#header .brand {
+        flex: 1 1 auto !important;
+    }
+
+    header#header .brand-logo {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        flex-basis: 40px !important;
+        border-radius: 11px !important;
+    }
+
+    header#header .brand-name {
+        font-size: 14px !important;
+    }
+
+    header#header .marketed-by {
+        font-size: 9px !important;
+    }
+
+    header#header .location {
+        font-size: 7px !important;
+        letter-spacing: 1px !important;
+    }
+
+    header#header .nav-actions {
+        flex: 0 0 auto !important;
+    }
+
+    header#header .nav-actions .btn {
+        min-width: 120px !important;
+        height: 40px !important;
+        padding: 0 16px !important;
+        font-size: 12px !important;
+    }
+
+    header#header .mobile-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 40px !important;
+        height: 40px !important;
+        border: 1px solid rgba(255,255,255,.22) !important;
+        border-radius: 10px !important;
+        color: #fff !important;
+        background: rgba(255,255,255,.06) !important;
+        cursor: pointer !important;
+    }
+}
+
+@media (max-width: 520px) {
+    header#header .nav-actions .btn {
+        min-width: 104px !important;
+        padding: 0 12px !important;
+        font-size: 11px !important;
+    }
+
+    header#header .brand-logo {
+        width: 37px !important;
+        height: 37px !important;
+        min-width: 37px !important;
+        flex-basis: 37px !important;
+        font-size: 16px !important;
+    }
+
+    header#header .brand-name {
+        font-size: 12px !important;
+    }
+
+    header#header .marketed-by {
+        font-size: 8px !important;
+    }
+
+    header#header .location {
+        font-size: 6px !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header id="header">
+    <div class="container">
+        <nav class="main-nav">
+
+            <!-- BRAND -->
+            <a href="#home" class="brand" aria-label="Eastern Meadows Home">
+                <span class="brand-logo" aria-hidden="true">E</span>
+
+                <span class="brand-text">
+                    <span class="brand-name">EASTERN MEADOWS</span>
+                    <span class="marketed-by">Marketed by Indhu Infra</span>
+                </span>
+            </a>
+
+            <!-- NAVIGATION -->
+            <div class="navlinks" id="navlinks">
+                <a href="#overview">Overview</a>
+                <a href="#highlights">Highlights</a>
+                <a href="#amenities">Amenities</a>
+                <a href="#masterplan">Master Plan</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <!-- RIGHT ACTIONS -->
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary">Enquire Now</a>
+                <button id="mobileToggle" class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <img
+        src="assets/lifestyle.jpg"
+        class="hero-background"
+        alt="Eastern Meadows lifestyle">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                GHATKESAR · HYDERABAD
+            </div>
+
+            <h1>
+                Welcome to the dawn of a
+                <span>new life.</span>
+            </h1>
+
+            <p>
+                Eastern Meadows — a 170-acre integrated township
+                created for a new lifestyle at Ghatkesar.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    Book a Site Visit →
+                </a>
+
+                <a href="#masterplan" class="btn btn-outline">
+                    View Master Plan
+                </a>
+            </div>
+
+
+            <!-- ================= HERO STATS ================= -->
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>170</strong>
+                    <span>Acres</span>
+                </div>
+
+                <div>
+                    <strong>75,000</strong>
+                    <span>Sq.ft Club House</span>
+                </div>
+
+                <div>
+                    <strong>4</strong>
+                    <span>Acres Club House</span>
+                </div>
+
+                <div>
+                    <strong>15</strong>
+                    <span>Years Membership</span>
+                </div>
+
+            </div>
+
+
+            <!-- ================= AMENITIES BELOW STATS ================= -->
+
+            <div class="hero-amenities">
+
+                <div class="amenities-heading">
+                    <h3>WORLD-CLASS AMENITIES</h3>
+                </div>
+
+                <div class="amenities-slider">
+
+                    <div class="amenities-track">
+
+                        <!-- FIRST SET -->
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/plantation.jpg" alt="Plantation">
+                            <span>Plantation</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/lighting.jpg" alt="Lighting">
+                            <span>Lighting</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/security.jpg" alt="Security">
+                            <span>Security</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/roads.jpg" alt="BT Roads">
+                            <span>BT Roads</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/cycling.jpg" alt="Cycling Track">
+                            <span>Cycling</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/walking.jpg" alt="Walking Track">
+                            <span>Walking</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/jogging.jpg" alt="Jogging Track">
+                            <span>Jogging</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/tennis.jpg" alt="Tennis Court">
+                            <span>Tennis</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/badminton.jpg" alt="Badminton Court">
+                            <span>Badminton</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/basketball.jpg" alt="Basketball Court">
+                            <span>Basketball</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/playarea.jpg" alt="Children's Play Area">
+                            <span>Play Area</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/petpark.jpg" alt="Pet Park">
+                            <span>Pet Park</span>
+                        </div>
+
+
+                        <!-- SECOND SET - REQUIRED FOR SEAMLESS LOOP -->
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/plantation.jpg" alt="Plantation">
+                            <span>Plantation</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/lighting.jpg" alt="Lighting">
+                            <span>Lighting</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/security.jpg" alt="Security">
+                            <span>Security</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/roads.jpg" alt="BT Roads">
+                            <span>BT Roads</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/cycling.jpg" alt="Cycling Track">
+                            <span>Cycling</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/walking.jpg" alt="Walking Track">
+                            <span>Walking</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/jogging.jpg" alt="Jogging Track">
+                            <span>Jogging</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/tennis.jpg" alt="Tennis Court">
+                            <span>Tennis</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/badminton.jpg" alt="Badminton Court">
+                            <span>Badminton</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/basketball.jpg" alt="Basketball Court">
+                            <span>Basketball</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/playarea.jpg" alt="Children's Play Area">
+                            <span>Play Area</span>
+                        </div>
+
+                        <div class="hero-amenity-card">
+                            <img src="assets/petpark.jpg" alt="Pet Park">
+                            <span>Pet Park</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ================= HERO CONTACT FORM ================= -->
+
+<div class="hero-contact-card">
+
+    <div class="form-step">
+        <span>1 / 2</span>
+    </div>
+
+    <h2>Let's get you started</h2>
+
+    <p class="form-subtitle">
+        Share your details and our team will reach out to
+        schedule your site visit.
+    </p>
+
+    <form id="heroLeadForm">
+
+        <div class="hero-input-group">
+            <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                required>
+        </div>
+
+        <div class="hero-input-group phone-group">
+            <div class="country-code">
+                🇮🇳 <span>+91</span>
+            </div>
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                maxlength="10"
+                required>
+        </div>
+
+        <label class="whatsapp-option">
+            <input type="checkbox" checked>
+            <span class="custom-check">✓</span>
+            Send me updates on WhatsApp
+        </label>
+
+
+        <button type="submit" class="hero-next-btn">
+            NEXT
+        </button>
+
+        <p class="privacy-note">
+            By submitting this form, you agree to the<br>
+            <span>privacy policy</span> &
+            <span>terms and conditions</span>
+        </p>
+
+    </form>
+
+</div>
+</section>
+
+
+<!-- ================= TICKER ================= -->
+
+<div class="ticker">
+
+    <div class="ticker-track">
+
+        <div class="ticker-content">
+            <span>Premium Living</span>
+            <span>Nature Inspired</span>
+            <span>Clubhouse</span>
+            <span>Modern Amenities</span>
+            <span>Prime Location</span>
+        </div>
+
+        <div class="ticker-content" aria-hidden="true">
+            <span>Premium Living</span>
+            <span>Nature Inspired</span>
+            <span>Clubhouse</span>
+            <span>Modern Amenities</span>
+            <span>Prime Location</span>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ================= OVERVIEW ================= -->
+
+<section id="overview" class="section overview">
+
+    <div class="container">
+
+        <div class="section-image">
+
+            <img
+                src="assets/overview.jpg"
+                alt="Eastern Meadows project brochure">
+
+            <div class="image-label">
+                <strong>170 Acres</strong>
+                <span>Integrated Township</span>
+            </div>
+
+        </div>
+
+        <div class="section-content">
+
+            <div class="eyebrow">EASTERN MEADOWS</div>
+
+            <h2>
+                A place where life has more room.
+            </h2>
+
+            <p>
+                Discover a thoughtfully planned township with landscaped
+                spaces, recreation, community facilities and residential plots.
+            </p>
+
+            <p>
+                The brochure presents Eastern Meadows as a large integrated
+                development at Ghatkesar, designed around nature, community
+                and a modern lifestyle.
+            </p>
+
+            <div class="info-grid">
+
+                <div>
+                    <strong>170</strong>
+                    <span>Acres</span>
+                </div>
+
+                <div>
+                    <strong>Green</strong>
+                    <span>Open Spaces</span>
+                </div>
+
+                <div>
+                    <strong>Gated</strong>
+                    <span>Community</span>
+                </div>
+
+                <div>
+                    <strong>Premium</strong>
+                    <span>Lifestyle</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ================= HIGHLIGHTS ================= -->
+
+<section id="highlights" class="section highlights">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">PROJECT HIGHLIGHTS</div>
+
+            <h2>
+                Everything you need, thoughtfully planned.
+            </h2>
+
+        </div>
+
+        <div class="highlight-grid">
+
+            <article class="highlight-card">
+
+                <div class="card-image">
+                    <img src="assets/overview-bg.jpg" alt="Residential lifestyle">
+                    <span>01</span>
+                </div>
+
+                <div class="card-content">
+                    <h3>170-Acre Integrated Township</h3>
+                    <p>
+                        A large planned development with residential
+                        and community infrastructure.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="highlight-card">
+
+                <div class="card-image">
+                    <img src="assets/villa.jpg" alt="Family lifestyle">
+                    <span>02</span>
+                </div>
+
+                <div class="card-content">
+                    <h3>Nature & Family Living</h3>
+                    <p>
+                        Green surroundings and family-oriented spaces
+                        create a relaxed community atmosphere.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="highlight-card">
+
+                <div class="card-image">
+                    <img src="assets/family.jpg" alt="Community lifestyle">
+                    <span>03</span>
+                </div>
+
+                <div class="card-content">
+                    <h3>Community & Recreation</h3>
+                    <p>
+                        Spaces for recreation, social interaction and
+                        everyday lifestyle experiences.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= CLUB HOUSE ================= -->
+
+<section id="clubhouse" class="section clubhouse">
+
+    <div class="container">
+
+        <div class="clubhouse-image">
+
+            <img
+                src="assets/Clubhouse.jpg"
+                alt="Eastern Meadows Club House">
+
+            <div class="clubhouse-number">
+                75,000 <small>SQ.FT</small>
+            </div>
+
+        </div>
+
+        <div class="clubhouse-content">
+
+            <div class="eyebrow">THE CLUB HOUSE</div>
+
+            <h2>
+                Your everyday destination for fun.
+            </h2>
+
+            <p>
+                The brochure presents a proposed 75,000 sq.ft Club House
+                spread across around 4 acres, with lifestyle and recreation
+                facilities.
+            </p>
+
+            <div class="club-features">
+
+                <div>🏊 Swimming Pool</div>
+                <div>🏋️ Gym</div>
+                <div>🎾 Tennis Court</div>
+                <div>🏸 Badminton Court</div>
+                <div>🏆 Squash Court</div>
+                <div>🎮 Indoor Games</div>
+                <div>🎉 Banquet Hall</div>
+                <div>🌿 Party Lawn</div>
+                <div>🛒 Super Market</div>
+                <div>💊 Pharmacy</div>
+
+            </div>
+
+            <div class="club-stat">
+                <strong>15 Years</strong>
+                <span>Club House Membership</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= AMENITIES ================= -->
+
+<section id="amenities" class="section amenities">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="eyebrow">AMENITIES</div>
+
+            <h2>
+                Designed for active living.
+            </h2>
+
+            <p>
+                Use the brochure visuals to showcase the community
+                lifestyle and planned amenities.
+            </p>
+
+        </div>
+
+
+        <div class="amenity-layout">
+
+            <div class="amenity-main-image">
+
+                <img
+                    src="assets/15-mid park - Copy.jpg"
+                    alt="Eastern Meadows lifestyle">
+
+                <div class="amenity-overlay">
+                    <strong>Live. Play. Connect.</strong>
+                    <span>Every day.</span>
+                </div>
+
+            </div>
+
+
+            <div class="amenity-side-images">
+
+                <img
+                    src="assets/14-mid park.jpg"
+                    alt="Family recreation">
+
+                <img
+                    src="assets/09-mid park.jpg"
+                    alt="Residential lifestyle">
+
+            </div>
+
+        </div>
+
+
+        <div class="amenity-carousel">
+
+            <div class="amenity-carousel-track">
+
+                <div class="amenity-card">
+                    <img src="assets/cycling.jpg" alt="Cycling Track">
+                    <span>🚴 Cycling Track</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/walking.jpg" alt="Walking Track">
+                    <span>🚶 Walking Track</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/jogging.jpg" alt="Jogging Track">
+                    <span>🏃 Jogging Track</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/tennis.jpg" alt="Tennis">
+                    <span>🎾 Tennis</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/badminton.jpg" alt="Badminton">
+                    <span>🏸 Badminton</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/basketball.jpg" alt="Basketball">
+                    <span>🏀 Basketball</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/playarea.jpg" alt="Children's Play Area">
+                    <span>🛝 Children's Play Area</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/petpark.jpg" alt="Pet Park">
+                    <span>🐕 Pet Park</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/plantation.jpg" alt="Avenue Plantation">
+                    <span>🌳 Avenue Plantation</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/lighting.jpg" alt="Street Lighting">
+                    <span>💡 Street Lighting</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/security.jpg" alt="24/7 Security">
+                    <span>🛡️ 24/7 Security</span>
+                </div>
+
+                <div class="amenity-card">
+                    <img src="assets/roads.jpg" alt="BT Roads">
+                    <span>🛣️ BT Roads</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= MASTER PLAN ================= -->
+
+<section id="masterplan" class="section masterplan">
+
+    <div class="container">
+
+        <div class="masterplan-heading">
+
+            <div class="eyebrow">MASTER PLAN</div>
+
+            <h2>
+                Planned around people and space.
+            </h2>
+
+            <p>
+                The master plan below is taken directly from the
+                uploaded Eastern Meadows brochure.
+            </p>
+
+        </div>
+
+        <div class="masterplan-image">
+
+            <img
+                src="assets/master-plan.jpg"
+                alt="Eastern Meadows master plan">
+
+            <div class="zoom-hint">
+                🔍 Master Plan
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= LOCATION MAP ================= -->
+
+<section class="map-section">
+
+    <div class="container">
+
+        <div class="map-image">
+            <img
+                src="assets/25-clubhouse.jpg"
+                alt="Eastern Meadows location map">
+        </div>
+
+        <div class="map-content">
+
+            <div class="eyebrow">LOCATION MAP</div>
+
+            <h2>
+                Well connected. Well positioned.
+            </h2>
+
+            <p>
+                The location map is included from the uploaded brochure
+                so the website uses the project's own visual instead
+                of a generic map.
+            </p>
+
+            <div class="proximity-grid">
+
+                <div>
+                    <strong>GHATKESAR</strong>
+                    <span>Project location</span>
+                </div>
+
+                <div>
+                    <strong>ORR</strong>
+                    <span>Major connectivity</span>
+                </div>
+
+                <div>
+                    <strong>POCHARAM</strong>
+                    <span>IT-IR corridor</span>
+                </div>
+
+                <div>
+                    <strong>HIGHWAY</strong>
+                    <span>Regional access</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact-section">
+
+    <img
+        src="assets/contact.jpg"
+        class="contact-background"
+        alt="">
+
+    <div class="contact-overlay"></div>
+
+    <div class="container">
+
+        <div class="contact-layout">
+
+            <div class="contact-text">
+
+                <div class="eyebrow">
+                    BOOK A SITE VISIT
+                </div>
+
+                <h2>
+                    Come and experience the land.
+                </h2>
+
+                <p>
+                    Get in touch with the Eastern Meadows team for
+                    Eastern Meadows project information and site visits.
+                </p>
+
+                <div class="contact-details">
+
+                    <p>
+                        <strong>
+                            Eastern Meadows<br>
+                            Akshita Infra
+                        </strong>
+                    </p>
+
+                    <p>
+                        H.No. 8-2-269/W/3, Sai Teja Apartment,
+                        1st Floor, Women's Society, Sagar Society,
+                        Road No-2, Banjara Hills, Hyderabad - 500034.
+                    </p>
+
+                    <p>
+                        sales@akshitainfra.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="leadForm" class="lead-form">
+
+                <h3>
+                    Request a Callback
+                </h3>
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    required>
+
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    required>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address">
+
+                <textarea
+                    name="message"
+                    placeholder="Your Message"></textarea>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+                    Submit Enquiry →
+                </button>
+
+                <p class="form-note">
+                    Your information is used only to contact you
+                    regarding Eastern Meadows.
+                </p>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+        <nav class="main-nav">
+
+            <!-- BRAND -->
+            <a href="#home" class="brand" aria-label="Eastern Meadows Home">
+                <span class="brand-logo" aria-hidden="true">E</span>
+
+                <span class="brand-text">
+                    <span class="brand-name">EASTERN MEADOWS</span>
+                    <span class="marketed-by">Marketed by Indhu Infra</span>
+                    <span class="location">GHATKESAR · HYDERABAD</span>
+                </span>
+            </a>
+
+        
+
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <a href="#overview">Overview</a><br>
+                <a href="#highlights">Highlights</a><br>
+                <a href="#clubhouse">Club House</a><br>
+                <a href="#amenities">Amenities</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <p>sales@indhuinfra.com</p>
+                <p>Hyderabad</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Indhu Infra. All rights reserved.
+        </div>
+
+    </div>
+</footer>
+
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+<!-- =========================================================
+     EASTERN MEADOWS — SMART CONTACT + CHAT
+========================================================= -->
+
+
+<!-- DIRECT PHONE + WHATSAPP BUTTONS -->
+<div class="em-direct-contact" aria-label="Quick contact options">
+
+    <a href="tel:+919962944444"
+       class="em-direct-btn em-phone-btn"
+       aria-label="Call Eastern Meadows"
+       title="Call Eastern Meadows">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+            19.79 19.79 0 0 1-8.63-3.07
+            19.5 19.5 0 0 1-6-6
+            19.79 19.79 0 0 1-3.07-8.67
+            A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+            12.84 12.84 0 0 0 .7 2.81
+            2 2 0 0 1-.45 2.11L8.09 9.91
+            a16 16 0 0 0 6 6l1.27-1.27
+            a2 2 0 0 1 2.11-.45
+            12.84 12.84 0 0 0 2.81.7
+            A2 2 0 0 1 22 16.92z"
+            stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <a href="https://wa.me/919962944444?text=Hello%20Eastern%20Meadows%21%20I%20am%20interested%20in%20the%20project.%20Please%20share%20project%20details%2C%20pricing%2C%20amenities%2C%20master%20plan%2C%20location%20and%20site%20visit%20details."
+       class="em-direct-btn em-whatsapp-btn"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="WhatsApp Eastern Meadows"
+       title="WhatsApp Eastern Meadows">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="15" fill="#25D366"/>
+            <path fill="#fff" d="M23.7 8.3A10.85 10.85 0 0 0 16 5.1C10 5.1 5.1 10 5.1 16c0 1.92.5 3.8 1.45 5.45L5 27l5.7-1.5A10.9 10.9 0 0 0 16 26.9h.01c6 0 10.89-4.9 10.89-10.9 0-2.9-1.13-5.63-3.2-7.7Zm-7.7 16.55c-1.7 0-3.36-.45-4.82-1.3l-.35-.2-3.38.89.9-3.3-.22-.35A9 9 0 1 1 16 24.85Zm4.94-6.72c-.27-.14-1.58-.78-1.82-.87-.24-.09-.42-.14-.6.14-.18.27-.69.87-.84 1.05-.15.18-.31.2-.58.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.42.12-.56.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47h-.51c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.31.95 2.58 1.09 2.76.14.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.65 1.8-1.27.22-.62.22-1.15.15-1.27-.06-.12-.24-.18-.51-.31Z"/>
+        </svg>
+    </a>
+
+</div>
+
+<div class="em-contact-system" id="emContactSystem">
+
+    <!-- ACTION BUTTONS -->
+    <div class="em-contact-actions">
+
+        <!-- ENQUIRY -->
+        <button
+            class="em-action em-enquiry-action"
+            onclick="emOpenEnquiry()">
+
+            <span class="em-action-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M4 4h16v16H4z"
+                        stroke="currentColor"
+                        stroke-width="1.8"/>
+
+                    <path
+                        d="M8 9h8M8 13h6M8 17h4"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"/>
+                </svg>
+            </span>
+
+            Book a Site Visit
+        </button>
+
+
+        <!-- CALL -->
+        <a
+            href="tel:+919962944444"
+            class="em-action em-call-action">
+
+            <span class="em-action-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2
+                        19.79 19.79 0 0 1-8.63-3.07
+                        19.5 19.5 0 0 1-6-6
+                        19.79 19.79 0 0 1-3.07-8.67
+                        A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+                        12.84 12.84 0 0 0 .7 2.81
+                        2 2 0 0 1-.45 2.11L8.09 9.91
+                        a16 16 0 0 0 6 6l1.27-1.27
+                        a2 2 0 0 1 2.11-.45
+                        12.84 12.84 0 0 0 2.81.7
+                        A2 2 0 0 1 22 16.92z"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+            </span>
+
+            Call Eastern Meadows
+        </a>
+
+
+        <!-- WHATSAPP -->
+        <button
+            class="em-action em-whatsapp-action"
+            onclick="emOpenWhatsApp()">
+
+            <span class="em-action-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.52 3.48A11.91 11.91 0 0 0 12.04 0
+                    C5.48 0 .14 5.34.14 11.9c0 2.1.55 4.16 1.59 5.97
+                    L.04 24l6.27-1.64a11.92 11.92 0 0 0 5.72 1.46h.01
+                    c6.56 0 11.9-5.34 11.9-11.9
+                    0-3.18-1.24-6.17-3.42-8.44Z"/>
+                </svg>
+            </span>
+
+            WhatsApp
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         CHAT WINDOW
+    ====================================================== -->
+
+    <div
+        class="em-chat-window"
+        id="emChatWindow">
+
+        <!-- HEADER -->
+
+        <div class="em-chat-header">
+
+            <div class="em-chat-brand">
+
+                <div class="em-chat-logo" aria-label="Eastern Meadows Chat">
+                    <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <circle cx="20" cy="20" r="20" fill="#f58b16"/>
+                        <rect x="9" y="11" width="22" height="17" rx="6" fill="#fff"/>
+                        <circle cx="15" cy="19" r="2" fill="#193b29"/>
+                        <circle cx="25" cy="19" r="2" fill="#193b29"/>
+                        <path d="M15 24c2.8 2 7.2 2 10 0" stroke="#193b29" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M20 7v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="20" cy="6" r="2" fill="#fff"/>
+                    </svg>
+                </div>
+
+                <div>
+                    <strong>Eastern Meadows</strong>
+
+                    <span>
+                        <i></i>
+                        Online Project Assistant
+                    </span>
+                </div>
+
+            </div>
+
+            <button
+                class="em-chat-close"
+                onclick="emCloseChat()">
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- BODY -->
+
+        <div
+            class="em-chat-body"
+            id="emChatBody">
+
+            <div class="em-bot-message">
+
+                <div class="em-message-avatar">
+                    E
+                </div>
+
+                <div class="em-message-content">
+
+                    <span class="em-message-time">
+                        Eastern Meadows Assistant
+                    </span>
+
+                    <div class="em-message-bubble">
+
+                        Hello! 👋<br>
+
+                        Welcome to <strong>Eastern Meadows</strong>.
+
+                        <br><br>
+
+                        I can help you with the project,
+                        amenities, master plan, location
+                        and site visits.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK OPTIONS -->
+
+            <div class="em-quick-actions">
+
+                <button onclick="emBotReply('project')">
+
+                    <span>🏡</span>
+
+                    <div>
+                        <strong>Project Details</strong>
+                        <small>About Eastern Meadows</small>
+                    </div>
+
+                </button>
+
+
+                <button onclick="emBotReply('amenities')">
+
+                    <span>✨</span>
+
+                    <div>
+                        <strong>Amenities</strong>
+                        <small>Explore facilities</small>
+                    </div>
+
+                </button>
+
+
+                <button onclick="emBotReply('masterplan')">
+
+                    <span>🗺</span>
+
+                    <div>
+                        <strong>Master Plan</strong>
+                        <small>View project layout</small>
+                    </div>
+
+                </button>
+
+
+                <button onclick="emBotReply('location')">
+
+                    <span>📍</span>
+
+                    <div>
+                        <strong>Location</strong>
+                        <small>Connectivity & location</small>
+                    </div>
+
+                </button>
+
+
+                <button onclick="emBotReply('visit')">
+
+                    <span>📅</span>
+
+                    <div>
+                        <strong>Book Site Visit</strong>
+                        <small>Schedule a visit</small>
+                    </div>
+
+                </button>
+
+
+                <button onclick="emOpenWhatsApp()">
+
+                    <span>💬</span>
+
+                    <div>
+                        <strong>WhatsApp Us</strong>
+                        <small>Talk to our team</small>
+                    </div>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- INPUT -->
+
+        <div class="em-chat-input-area">
+
+            <input
+                type="text"
+                id="emChatInput"
+                placeholder="Ask about Eastern Meadows..."
+                autocomplete="off"
+                onkeydown="emHandleChatKey(event)">
+
+            <button
+                onclick="emSendMessage()"
+                aria-label="Send">
+
+                <svg viewBox="0 0 24 24" fill="none">
+
+                    <path
+                        d="M22 2L11 13"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"/>
+
+                    <path
+                        d="M22 2l-7 20-4-9-9-4 20-7Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <div class="em-chat-footer">
+            Eastern Meadows • Ghatkesar • Hyderabad
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NOTIFICATION
+    ====================================================== -->
+
+    <div
+        class="em-chat-notification"
+        id="emChatNotification">
+
+        <button
+            class="em-notification-close"
+            onclick="emCloseNotification()">
+            ×
+        </button>
+
+        <div class="em-notification-icon">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M7 7.5A4.5 4.5 0 0 1 11.5 3h9A4.5 4.5 0 0 1 25 7.5v8A4.5 4.5 0 0 1 20.5 20H14l-6 5v-5.2A4.5 4.5 0 0 1 4 15.5v-8A4.5 4.5 0 0 1 7 7.5Z" fill="currentColor"/>
+                <circle cx="11" cy="12" r="1.5" fill="#fff"/>
+                <circle cx="16" cy="12" r="1.5" fill="#fff"/>
+                <circle cx="21" cy="12" r="1.5" fill="#fff"/>
+            </svg>
+        </div>
+
+        <div>
+            <strong>Eastern Meadows</strong>
+            <p>Need help finding the right option?</p>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN BUTTON
+    ====================================================== -->
+
+    <button
+        class="em-main-contact"
+        id="emMainContact"
+        onclick="emToggleContact()"
+        aria-label="Contact Eastern Meadows">
+
+        <span class="em-main-plus" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+                <path d="M7 7.5A4.5 4.5 0 0 1 11.5 3h9A4.5 4.5 0 0 1 25 7.5v8A4.5 4.5 0 0 1 20.5 20H14l-6 5v-5.2A4.5 4.5 0 0 1 4 15.5v-8A4.5 4.5 0 0 1 7 7.5Z" fill="white"/>
+                <circle cx="11" cy="12" r="1.6" fill="#f58b16"/>
+                <circle cx="16" cy="12" r="1.6" fill="#f58b16"/>
+                <circle cx="21" cy="12" r="1.6" fill="#f58b16"/>
+            </svg>
+        </span>
+
+
+        <span class="em-main-close">
+
+            <svg viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M6 6l12 12M18 6L6 18"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"/>
+            </svg>
+
+        </span>
+
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     SITE VISIT MODAL
+========================================================= -->
+
+<div
+    id="emEnquiryOverlay"
+    style="
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.65);
+        backdrop-filter:blur(6px);
+        display:none;
+        align-items:center;
+        justify-content:center;
+        z-index:100000;
+        padding:20px;
+    "
+    onclick="if(event.target===this) emCloseEnquiry()">
+
+    <div
+        style="
+            width:100%;
+            max-width:520px;
+            background:#fff;
+            border-radius:24px;
+            padding:30px;
+            position:relative;
+            box-shadow:0 30px 100px rgba(0,0,0,.3);
+        ">
+
+        <button
+            onclick="emCloseEnquiry()"
+            style="
+                position:absolute;
+                right:18px;
+                top:16px;
+                width:35px;
+                height:35px;
+                border:0;
+                border-radius:50%;
+                background:#f3f3f3;
+                cursor:pointer;
+                font-size:20px;
+            ">
+            ×
+        </button>
+
+
+        <div style="
+            color:#d98a12;
+            font-size:11px;
+            font-weight:800;
+            letter-spacing:2px;
+            margin-bottom:8px;
+        ">
+            EASTERN MEADOWS
+        </div>
+
+
+        <h2 style="
+            margin:0;
+            color:#193b29;
+            font-family:'Playfair Display',serif;
+            font-size:32px;
+        ">
+            Plan your site visit.
+        </h2>
+
+
+        <p style="
+            color:#6c766f;
+            font-size:14px;
+            line-height:1.6;
+            margin-bottom:24px;
+        ">
+            Share your details and our team will contact you
+            regarding Eastern Meadows.
+        </p>
+
+
+        <form onsubmit="emSubmitForm(event)">
+
+            <input
+                id="emVisitName"
+                type="text"
+                placeholder="Full Name"
+                required
+                style="
+                    width:100%;
+                    box-sizing:border-box;
+                    padding:14px;
+                    border:1px solid #ddd;
+                    border-radius:12px;
+                    margin-bottom:12px;
+                    font-family:inherit;
+                ">
+
+
+            <input
+                id="emVisitPhone"
+                type="tel"
+                placeholder="Phone Number"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                required
+                style="
+                    width:100%;
+                    box-sizing:border-box;
+                    padding:14px;
+                    border:1px solid #ddd;
+                    border-radius:12px;
+                    margin-bottom:12px;
+                    font-family:inherit;
+                ">
+
+
+            <input
+                id="emVisitEmail"
+                type="email"
+                placeholder="Email Address"
+                style="
+                    width:100%;
+                    box-sizing:border-box;
+                    padding:14px;
+                    border:1px solid #ddd;
+                    border-radius:12px;
+                    margin-bottom:12px;
+                    font-family:inherit;
+                ">
+
+
+            <select
+                id="emVisitInterest"
+                style="
+                    width:100%;
+                    box-sizing:border-box;
+                    padding:14px;
+                    border:1px solid #ddd;
+                    border-radius:12px;
+                    margin-bottom:18px;
+                    font-family:inherit;
+                ">
+
+                <option>Residential Plots</option>
+                <option>Project Details</option>
+                <option>Amenities</option>
+                <option>Master Plan</option>
+                <option>Location & Connectivity</option>
+                <option>Site Visit</option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                style="
+                    width:100%;
+                    padding:15px;
+                    border:0;
+                    border-radius:13px;
+                    background:#e89417;
+                    color:#fff;
+                    font-size:14px;
+                    font-weight:800;
+                    cursor:pointer;
+                    font-family:inherit;
+                ">
+
+                REQUEST SITE VISIT →
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   EASTERN MEADOWS CONTACT SYSTEM
+   ========================================================= */
+
+const emSystem =
+    document.getElementById("emContactSystem");
+
+const emChat =
+    document.getElementById("emChatWindow");
+
+const emBody =
+    document.getElementById("emChatBody");
+
+const emInput =
+    document.getElementById("emChatInput");
+
+
+/* MAIN BUTTON */
+
+function emToggleContact() {
+
+    emSystem.classList.toggle("open");
+
+    if (emSystem.classList.contains("open")) {
+
+        emChat.classList.add("active");
+
+        document
+            .getElementById("emChatNotification")
+            .classList.add("hidden");
+
+    } else {
+
+        emChat.classList.remove("active");
+
+    }
+
+}
+
+
+/* CLOSE CHAT */
+
+function emCloseChat() {
+
+    emChat.classList.remove("active");
+
+    emSystem.classList.remove("open");
+
+}
+
+
+/* NOTIFICATION */
+
+function emCloseNotification() {
+
+    document
+        .getElementById("emChatNotification")
+        .classList.add("hidden");
+
+}
+
+
+/* WHATSAPP */
+function emOpenWhatsApp() {
+    const phone = "919962944444";
+
+    const message =
+        "Hello Eastern Meadows! " +
+        "I am interested in the Eastern Meadows project at Ghatkesar. " +
+        "Please share project details, pricing, amenities, master plan, " +
+        "location and site visit details.";
+
+    const whatsappURL =
+        "https://wa.me/" + phone +
+        "?text=" + encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+}
+
+/* ENQUIRY */
+
+function emOpenEnquiry() {
+
+    document.getElementById(
+        "emEnquiryOverlay"
+    ).style.display = "flex";
+
+}
+
+
+function emCloseEnquiry() {
+
+    document.getElementById(
+        "emEnquiryOverlay"
+    ).style.display = "none";
+
+}
+
+
+/* FORM */
+
+function emSubmitForm(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("emVisitName").value.trim();
+
+    const phone =
+        document.getElementById("emVisitPhone").value.trim();
+
+    const email =
+        document.getElementById("emVisitEmail").value.trim();
+
+    const interest =
+        document.getElementById("emVisitInterest").value;
+
+    const message =
+        "Hello Eastern Meadows!%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Interested In: " + encodeURIComponent(interest);
+
+    const whatsappURL =
+        "https://wa.me/919962944444?text=" + message;
+
+    window.open(
+        whatsappURL,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+    emCloseEnquiry();
+
+}
+
+
+/* CHAT QUICK RESPONSES */
+
+function emBotReply(type) {
+
+    const responses = {
+
+        project:
+            "Eastern Meadows is presented as a 170-acre integrated township at Ghatkesar. The project is planned around residential plots, landscaped spaces, community facilities and recreation.",
+
+        amenities:
+            "Eastern Meadows features lifestyle and community amenities including cycling, walking and jogging tracks, tennis, badminton, basketball, children's play areas, pet park, avenue plantation, street lighting, security and BT roads.",
+
+        masterplan:
+            "The master plan shows the planned layout of residential plots, internal roads, parks, social infrastructure and other community spaces.",
+
+        location:
+            "Eastern Meadows is located at Ghatkesar, Hyderabad. The project materials highlight connectivity through the surrounding highway and major regional routes.",
+
+        visit:
+            "Absolutely! You can request a site visit. Click the 'Book Site Visit' option and provide your name and phone number. We can then connect you through WhatsApp."
+
+    };
+
+    emAddUserMessage(
+        document.querySelector(
+            `[onclick="emBotReply('${type}')"] strong`
+        ).innerText
+    );
+
+    setTimeout(function() {
+
+        emAddBotMessage(
+            responses[type]
+        );
+
+    }, 350);
+
+}
+
+
+/* USER MESSAGE */
+
+function emAddUserMessage(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.className =
+        "em-user-message";
+
+    div.innerHTML =
+        `<div class="em-user-bubble">
+            ${text}
+        </div>`;
+
+    emBody.appendChild(div);
+
+    emScrollChat();
+
+}
+
+
+/* BOT MESSAGE */
+
+function emAddBotMessage(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.className =
+        "em-bot-reply";
+
+    div.innerHTML =
+        `
+        <div class="em-message-avatar">
+            E
+        </div>
+
+        <div class="em-reply-bubble">
+            ${text}
+        </div>
+        `;
+
+    emBody.appendChild(div);
+
+    emScrollChat();
+
+}
+
+
+/* SEND CHAT */
+
+function emSendMessage() {
+
+    const message =
+        emInput.value.trim();
+
+    if (!message) return;
+
+    emAddUserMessage(message);
+
+    emInput.value = "";
+
+    setTimeout(function() {
+
+        const lower =
+            message.toLowerCase();
+
+        let reply =
+            "I can help you with Eastern Meadows project details, amenities, master plan, location or site visits. Please choose one of the options above.";
+
+        if (
+            lower.includes("amenit") ||
+            lower.includes("facility")
+        ) {
+
+            reply =
+                "The project amenities include cycling, walking and jogging tracks, tennis, badminton, basketball, children's play area, pet park, plantation, lighting, security and BT roads.";
+
+        }
+
+        else if (
+            lower.includes("location") ||
+            lower.includes("where") ||
+            lower.includes("ghatkesar")
+        ) {
+
+            reply =
+                "Eastern Meadows is located at Ghatkesar, Hyderabad. You can explore the Location Map section on this page for the project's connectivity information.";
+
+        }
+
+        else if (
+            lower.includes("master") ||
+            lower.includes("layout") ||
+            lower.includes("plan")
+        ) {
+
+            reply =
+                "You can view the Eastern Meadows Master Plan directly in the Master Plan section of this page.";
+
+        }
+
+        else if (
+            lower.includes("visit") ||
+            lower.includes("site")
+        ) {
+
+            reply =
+                "Sure! Click 'Book Site Visit' and submit your details. You can also contact the Eastern Meadows team through WhatsApp.";
+
+        }
+
+        else if (
+            lower.includes("whatsapp") ||
+            lower.includes("contact")
+        ) {
+
+            reply =
+                "You can contact the Eastern Meadows team directly through WhatsApp using the WhatsApp button.";
+
+        }
+
+        emAddBotMessage(reply);
+
+    }, 500);
+
+}
+
+
+/* ENTER KEY */
+
+function emHandleChatKey(event) {
+
+    if (event.key === "Enter") {
+
+        event.preventDefault();
+
+        emSendMessage();
+
+    }
+
+}
+
+
+/* SCROLL */
+
+function emScrollChat() {
+
+    emBody.scrollTop =
+        emBody.scrollHeight;
+
+}
+
+
+/* AUTOMATIC WELCOME POPUP */
+
+setTimeout(function() {
+
+    const notification =
+        document.getElementById(
+            "emChatNotification"
+        );
+
+    if (
+        notification &&
+        !emSystem.classList.contains("open")
+    ) {
+
+        notification.classList.remove("hidden");
+
+    }
+
+}, 3500);
+
+</script>
+
+</body>
+</html>
