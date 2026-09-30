@@ -6991,3 +6991,275 @@ header#header .location {
     min-height: 44px !important;
   }
 }
+/* =========================================================
+   EASTERN MEADOWS
+   FINAL MOBILE HEADER - DO NOT ADD ANOTHER HEADER BLOCK
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* HEADER */
+    #header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100% !important;
+        height: 125px !important;
+        min-height: 125px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        z-index: 999999 !important;
+
+        background: rgba(5, 55, 35, 0.96) !important;
+        box-sizing: border-box !important;
+    }
+
+    /* HEADER CONTAINER */
+    #header > .container {
+        width: 100% !important;
+        height: 125px !important;
+
+        margin: 0 !important;
+        padding: 0 12px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* NAV */
+    #header .main-nav {
+        position: relative !important;
+
+        width: 100% !important;
+        height: 125px !important;
+
+        display: block !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* =====================================================
+       BRAND
+       ===================================================== */
+
+    #header .brand {
+        position: absolute !important;
+
+        left: 10px !important;
+        top: 10px !important;
+
+        width: auto !important;
+        height: 42px !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 8px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        z-index: 1000000 !important;
+    }
+
+    #header .brand-logo {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+
+        flex: 0 0 38px !important;
+
+        border-radius: 10px !important;
+
+        font-size: 16px !important;
+    }
+
+    #header .brand-text {
+        display: flex !important;
+        flex-direction: column !important;
+
+        min-width: 0 !important;
+    }
+
+    #header .brand-name {
+        font-size: 12px !important;
+        line-height: 1.1 !important;
+
+        white-space: nowrap !important;
+    }
+
+    #header .marketed-by {
+        display: block !important;
+
+        margin-top: 3px !important;
+
+        font-size: 7px !important;
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+    }
+
+    /* =====================================================
+       HAMBURGER
+       ===================================================== */
+
+    #header .mobile-toggle {
+        position: absolute !important;
+
+        top: 10px !important;
+        right: 10px !important;
+
+        width: 38px !important;
+        height: 38px !important;
+
+        min-width: 38px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        z-index: 1000001 !important;
+
+        font-size: 19px !important;
+    }
+
+    /* =====================================================
+       ENQUIRE NOW
+       FULL WIDTH SECOND ROW
+       ===================================================== */
+
+    #header .nav-actions {
+        position: absolute !important;
+
+        left: 12px !important;
+        right: 12px !important;
+
+        top: 67px !important;
+
+        width: auto !important;
+        height: 42px !important;
+
+        display: block !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        z-index: 1000000 !important;
+    }
+
+    #header .nav-actions .btn,
+    #header .nav-actions .btn-primary {
+        position: static !important;
+
+        display: flex !important;
+
+        width: 100% !important;
+        min-width: 100% !important;
+
+        height: 42px !important;
+        min-height: 42px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 22px !important;
+
+        font-size: 12px !important;
+        font-weight: 700 !important;
+
+        white-space: nowrap !important;
+    }
+
+    /* =====================================================
+       HIDE DESKTOP NAV LINKS
+       ===================================================== */
+
+    #header .navlinks {
+        display: none !important;
+
+        position: absolute !important;
+
+        top: 132px !important;
+        left: 10px !important;
+        right: 10px !important;
+
+        width: auto !important;
+
+        z-index: 1000002 !important;
+    }
+
+    #header .navlinks.open {
+        display: flex !important;
+
+        flex-direction: column !important;
+    }
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    #home {
+        position: relative !important;
+
+        margin: 0 !important;
+        padding-top: 125px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #home .hero-content {
+        padding-top: 25px !important;
+    }
+
+    /* NO HORIZONTAL SCROLL */
+    html,
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow-x: hidden !important;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    #header {
+        height: 118px !important;
+        min-height: 118px !important;
+    }
+
+    #header > .container,
+    #header .main-nav {
+        height: 118px !important;
+    }
+
+    #header .nav-actions {
+        top: 63px !important;
+    }
+
+    #header .nav-actions .btn,
+    #header .nav-actions .btn-primary {
+        height: 40px !important;
+        min-height: 40px !important;
+    }
+
+    #home {
+        padding-top: 118px !important;
+    }
+}

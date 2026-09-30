@@ -2622,6 +2622,55 @@ setTimeout(function() {
 }, 3500);
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navlinks = document.getElementById("navlinks");
+
+    if (!mobileToggle || !navlinks) return;
+
+    mobileToggle.addEventListener("click", function () {
+
+        navlinks.classList.toggle("open");
+
+        const isOpen = navlinks.classList.contains("open");
+
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        mobileToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu"
+        );
+
+        mobileToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navlinks.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navlinks.classList.remove("open");
+
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileToggle.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
+
+            mobileToggle.textContent = "☰";
+        });
+
+    });
+
+});
+</script>
 </body>
 </html>
