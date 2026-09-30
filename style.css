@@ -6991,3 +6991,110 @@ header#header .location {
     min-height: 44px !important;
   }
 }
+/* =========================================================
+   MOBILE - MOVE HERO CONTACT CARD TO NEXT SCREEN
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* Keep the main hero as the first mobile screen */
+    #home.hero {
+        position: relative !important;
+
+        min-height: 100svh !important;
+        height: 100svh !important;
+
+        max-height: none !important;
+
+        overflow: visible !important;
+
+        padding-top: 118px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT DETAILS / CALLBACK CARD
+       Do NOT allow it to sit beside/inside the hero content
+       ----------------------------------------------------- */
+
+    #home .hero-contact-card {
+        position: absolute !important;
+
+        top: calc(100svh + 25px) !important;
+
+        left: 15px !important;
+        right: 15px !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        transform: none !important;
+
+        z-index: 50 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* Make sure the card doesn't use the old desktop position */
+    #home .hero-contact-card {
+        bottom: auto !important;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT CARD SIZE ON MOBILE
+       ----------------------------------------------------- */
+
+    #home .hero-contact-card h2 {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+
+        margin-top: 5px !important;
+    }
+
+    #home .hero-contact-card .form-subtitle {
+        font-size: 13px !important;
+        line-height: 1.45 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       IMPORTANT:
+       Do not let the hero contact card push the first
+       screen's content down.
+       ----------------------------------------------------- */
+
+    #home .hero-content {
+        position: relative !important;
+        z-index: 5 !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    #home.hero {
+        min-height: 100svh !important;
+        height: 100svh !important;
+    }
+
+    #home .hero-contact-card {
+        top: calc(100svh + 20px) !important;
+
+        left: 10px !important;
+        right: 10px !important;
+    }
+
+    #home .hero-contact-card h2 {
+        font-size: 21px !important;
+    }
+}
