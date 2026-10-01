@@ -61,66 +61,60 @@ if (navlinks) {
    MAIN ENQUIRY FORM
 ========================================= */
 
-const form = document.getElementById("leadForm");
-const toast = document.getElementById("toast");
+const leadForm = document.getElementById("leadForm");
 
-if (form) {
+leadForm.addEventListener("submit", async function (e) {
 
-    form.addEventListener("submit", function (event) {
+    e.preventDefault();
 
-        event.preventDefault();
+    const name = leadForm.elements["name"].value.trim();
+    const phone = leadForm.elements["phone"].value.trim();
+    const email = leadForm.elements["email"].value.trim();
+    const message = leadForm.elements["message"].value.trim();
 
-        const formData = new FormData(form);
+    try {
 
-        const name =
-            String(formData.get("name") || "").trim();
+        const response = await fetch(
+            "http://127.0.0.1:5000/api/contact",
+            {
+                method: "POST",
 
-        const phone =
-            String(formData.get("phone") || "").trim();
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-        const email =
-            String(formData.get("email") || "").trim();
-
-        const message =
-            String(formData.get("message") || "").trim();
-
-
-        if (!name) {
-
-            showToast("Please enter your name.");
-            return;
-
-        }
-
-
-        if (!phone) {
-
-            showToast("Please enter your phone number.");
-            return;
-
-        }
-
-
-        console.log({
-            name: name,
-            phone: phone,
-            email: email,
-            message: message
-        });
-
-
-        showToast(
-            "Thank you " +
-            name +
-            "! Your enquiry has been received."
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    message: message
+                })
+            }
         );
 
+        const result = await response.json();
 
-        form.reset();
+        if (result.success) {
 
-    });
+            alert("Thank you! Your enquiry has been submitted.");
 
-}
+            leadForm.reset();
+
+        } else {
+
+            alert(result.message || "Unable to submit enquiry.");
+
+        }
+
+    } catch (error) {
+
+        console.error("Form submission error:", error);
+
+        alert("Unable to submit your enquiry. Please try again.");
+
+    }
+
+});
 
 
 /* =========================================

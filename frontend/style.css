@@ -6992,37 +6992,52 @@ header#header .location {
   }
 }
 /* =========================================================
-   MOBILE - MOVE HERO CONTACT CARD TO NEXT SCREEN
+   MOBILE ONLY
+   HERO -> CONTACT -> OVERVIEW
    ========================================================= */
 
 @media screen and (max-width: 600px) {
 
-    /* Keep the main hero as the first mobile screen */
+    /* =====================================================
+       1. HERO = FIRST MOBILE SCREEN ONLY
+       ===================================================== */
+
     #home.hero {
         position: relative !important;
 
-        min-height: 100svh !important;
-        height: 100svh !important;
+        width: 100% !important;
 
+        height: 100svh !important;
+        min-height: 100svh !important;
         max-height: none !important;
 
-        overflow: visible !important;
+        /*
+           IMPORTANT:
+           Leave space after the hero for the contact card.
+        */
+        margin-bottom: 440px !important;
 
         padding-top: 118px !important;
+
+        overflow: visible !important;
 
         box-sizing: border-box !important;
     }
 
 
-    /* -----------------------------------------------------
-       CONTACT DETAILS / CALLBACK CARD
-       Do NOT allow it to sit beside/inside the hero content
-       ----------------------------------------------------- */
+    /* =====================================================
+       2. CONTACT CARD = SECOND MOBILE SCREEN
+       ===================================================== */
 
     #home .hero-contact-card {
+
         position: absolute !important;
 
-        top: calc(100svh + 25px) !important;
+        /*
+           Hero finishes first.
+           Contact card starts after hero.
+        */
+        top: calc(100svh + 20px) !important;
 
         left: 15px !important;
         right: 15px !important;
@@ -7034,45 +7049,334 @@ header#header .location {
 
         transform: none !important;
 
-        z-index: 50 !important;
+        z-index: 100 !important;
+
+        box-sizing: border-box !important;
+
+        /*
+           Keep your existing card appearance.
+        */
+        background: #ffffff !important;
+
+        border-radius: 16px !important;
+
+        box-shadow:
+            0 15px 45px rgba(0,0,0,.18) !important;
+    }
+
+
+    /* =====================================================
+       3. CONTACT CARD CONTENT
+       ===================================================== */
+
+    #home .hero-contact-card h2 {
+
+        font-size: 25px !important;
+
+        line-height: 1.2 !important;
+
+        margin-top: 5px !important;
+
+        margin-bottom: 10px !important;
+    }
+
+
+    #home .hero-contact-card .form-subtitle {
+
+        font-size: 13px !important;
+
+        line-height: 1.45 !important;
+
+        margin-bottom: 18px !important;
+    }
+
+
+    /* =====================================================
+       4. FORM INPUTS
+       ===================================================== */
+
+    #home .hero-contact-card input {
+
+        width: 100% !important;
 
         box-sizing: border-box !important;
     }
 
 
-    /* Make sure the card doesn't use the old desktop position */
-    #home .hero-contact-card {
-        bottom: auto !important;
+    #home .hero-contact-card button {
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
     }
 
 
-    /* -----------------------------------------------------
-       CONTACT CARD SIZE ON MOBILE
-       ----------------------------------------------------- */
+    /* =====================================================
+       5. OVERVIEW STARTS AFTER CONTACT CARD
+       ===================================================== */
+
+    #overview {
+
+        position: relative !important;
+
+        z-index: 2 !important;
+
+        margin-top: 0 !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    #home.hero {
+
+        height: 100svh !important;
+        min-height: 100svh !important;
+
+        margin-bottom: 425px !important;
+
+        padding-top: 112px !important;
+    }
+
+
+    #home .hero-contact-card {
+
+        top: calc(100svh + 15px) !important;
+
+        left: 10px !important;
+        right: 10px !important;
+    }
+
 
     #home .hero-contact-card h2 {
-        font-size: 24px !important;
-        line-height: 1.2 !important;
 
-        margin-top: 5px !important;
+        font-size: 22px !important;
+    }
+}
+/* =========================================================
+   MOBILE FOOTER - CLEAN VERTICAL LAYOUT
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* FOOTER MAIN AREA */
+    footer {
+        width: 100% !important;
+        min-height: auto !important;
+
+        padding: 45px 20px 20px !important;
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        overflow: hidden !important;
     }
 
-    #home .hero-contact-card .form-subtitle {
-        font-size: 13px !important;
-        line-height: 1.45 !important;
+
+    /* FOOTER CONTAINER */
+    footer .container {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto !important;
+        padding: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+        gap: 30px !important;
+
+        box-sizing: border-box !important;
     }
 
 
-    /* -----------------------------------------------------
-       IMPORTANT:
-       Do not let the hero contact card push the first
-       screen's content down.
-       ----------------------------------------------------- */
+    /* =====================================================
+       FOOTER LOGO / BRAND
+       ===================================================== */
 
-    #home .hero-content {
-        position: relative !important;
-        z-index: 5 !important;
+    footer .brand,
+    footer .footer-brand {
+        width: 100% !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
     }
+
+
+    footer .brand-logo {
+        margin: 0 auto 10px !important;
+    }
+
+
+    footer .brand-name {
+        text-align: center !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    footer .marketed-by {
+        text-align: center !important;
+    }
+
+
+    /* =====================================================
+       FOOTER NAVIGATION
+       ===================================================== */
+
+    footer nav,
+    footer .footer-nav,
+    footer .main-nav {
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 12px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        text-align: center !important;
+    }
+
+
+    footer nav a,
+    footer .footer-nav a,
+    footer .main-nav a {
+        display: block !important;
+
+        width: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: 14px !important;
+
+        line-height: 1.5 !important;
+
+        text-align: center !important;
+    }
+
+
+    /* =====================================================
+       FOOTER CONTACT DETAILS
+       ===================================================== */
+
+    footer .contact,
+    footer .footer-contact {
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        gap: 8px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        text-align: center !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    footer .contact h3,
+    footer .footer-contact h3 {
+        margin: 0 0 8px !important;
+
+        text-align: center !important;
+    }
+
+
+    footer .contact p,
+    footer .footer-contact p {
+        margin: 0 !important;
+
+        text-align: center !important;
+
+        line-height: 1.5 !important;
+
+        word-break: break-word !important;
+    }
+
+
+    /* =====================================================
+       FOOTER COLUMNS
+       ===================================================== */
+
+    footer .footer-grid {
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        gap: 30px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    footer .footer-grid > div {
+        width: 100% !important;
+
+        max-width: 350px !important;
+
+        margin: 0 auto !important;
+
+        text-align: center !important;
+    }
+
+
+    /* =====================================================
+       COPYRIGHT
+       ===================================================== */
+
+    footer .copyright,
+    footer .footer-bottom {
+        width: 100% !important;
+
+        margin: 15px 0 0 !important;
+        padding: 18px 0 0 !important;
+
+        text-align: center !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.5 !important;
+
+        border-top: 1px solid rgba(255,255,255,.15) !important;
+
+        box-sizing: border-box !important;
+    }
+
 }
 
 
@@ -7082,19 +7386,27 @@ header#header .location {
 
 @media screen and (max-width: 380px) {
 
-    #home.hero {
-        min-height: 100svh !important;
-        height: 100svh !important;
+    footer {
+        padding: 40px 15px 18px !important;
     }
 
-    #home .hero-contact-card {
-        top: calc(100svh + 20px) !important;
-
-        left: 10px !important;
-        right: 10px !important;
+    footer .container {
+        gap: 25px !important;
     }
 
-    #home .hero-contact-card h2 {
-        font-size: 21px !important;
+    footer nav a,
+    footer .footer-nav a,
+    footer .main-nav a {
+        font-size: 13px !important;
+    }
+
+    footer .contact p,
+    footer .footer-contact p {
+        font-size: 12px !important;
+    }
+
+    footer .copyright,
+    footer .footer-bottom {
+        font-size: 10px !important;
     }
 }
