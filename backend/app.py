@@ -58,13 +58,17 @@ Message:
 
     try:
 
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+        with smtplib.SMTP("smtp.gmail.com", 587, timeout=30) as smtp:
+
+
+            smtp.ehlo()
+            smtp.starttls()
+            smtp.ehlo()
 
             smtp.login(
                 EMAIL_ADDRESS,
                 EMAIL_PASSWORD
             )
-
             smtp.send_message(email_message)
 
         return jsonify({

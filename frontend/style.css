@@ -7410,3 +7410,68 @@ header#header .location {
         font-size: 10px !important;
     }
 }
+/* =========================================================
+   FINAL MOBILE FIX
+   HERO → CONTACT → OVERVIEW
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* Keep hero as the first section */
+    #home.hero {
+        position: relative !important;
+        height: 100svh !important;
+        min-height: 100svh !important;
+        margin-bottom: 440px !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    /* CONTACT FORM — place AFTER hero */
+    #home .hero-contact-card {
+        position: absolute !important;
+
+        top: calc(100svh + 20px) !important;
+
+        left: 15px !important;
+        right: 15px !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        transform: none !important;
+
+        z-index: 100 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Make sure Overview stays below contact area */
+    #overview {
+        position: relative !important;
+        z-index: 1 !important;
+        margin-top: 0 !important;
+        clear: both !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    #home.hero {
+        min-height: 100svh !important;
+        height: 100svh !important;
+        margin-bottom: 425px !important;
+    }
+
+    #home .hero-contact-card {
+        top: calc(100svh + 15px) !important;
+        left: 10px !important;
+        right: 10px !important;
+    }
+}
