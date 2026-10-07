@@ -2301,28 +2301,7 @@ MOBILE
    HERO CONTACT FORM
    ========================================================= */
 
-.hero-contact-card {
-    position: absolute;
 
-    top: 55px;
-    right: max(40px, calc((100vw - 1200px) / 2));
-
-    width: 420px;
-
-    background: #ffffff;
-    color: #222;
-
-    border-radius: 16px;
-
-    padding: 38px 40px 32px;
-
-    z-index: 20;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.35);
-
-    box-sizing: border-box;
-}
 
 /* Step indicator */
 
@@ -2375,29 +2354,11 @@ MOBILE
 
 /* Heading */
 
-.hero-contact-card h2 {
-    margin: 5px 55px 10px 0;
 
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 28px;
-    line-height: 1.2;
-
-    font-weight: 800;
-
-    color: #26344d;
-}
 
 /* Subtitle */
 
-.hero-contact-card .form-subtitle {
-    margin: 0 0 22px;
 
-    color: #666;
-
-    font-size: 14px;
-    line-height: 1.55;
-}
 
 /* Input */
 
@@ -2677,63 +2638,20 @@ MOBILE
         font-size: 24px;
     }
 }
-.hero-contact-card {
-    position: absolute;
 
-    top: 65px;
-    right: max(50px, calc((100vw - 1200px) / 2));
-
-    width: 330px;
-
-    background: #ffffff;
-    color: #222;
-
-    border-radius: 14px;
-
-    padding: 28px 30px 24px;
-
-    z-index: 20;
-
-    box-shadow: 0 15px 45px rgba(0,0,0,0.30);
-
-    box-sizing: border-box;
-}
 /* =========================================
    SMALL FRONT-PAGE CONTACT DETAILS BLOCK
    ========================================= */
 
-.hero-contact-card {
-    position: absolute !important;
 
-    top: 70px !important;
-    right: 70px !important;
-
-    width: 330px !important;
-
-    padding: 25px 28px 22px !important;
-
-    border-radius: 14px !important;
-
-    box-sizing: border-box !important;
-
-    z-index: 20 !important;
-}
 
 
 /* Heading */
-.hero-contact-card h2 {
-    font-size: 22px !important;
-    margin: 4px 45px 8px 0 !important;
-    line-height: 1.2 !important;
-}
+
 
 
 /* Description */
-.hero-contact-card .form-subtitle {
-    font-size: 12px !important;
-    line-height: 1.45 !important;
-    margin-bottom: 16px !important;
-}
+
 
 
 /* Input boxes */
@@ -2836,9 +2754,7 @@ MOBILE
         margin: 30px auto !important;
     }
 }
-.hero-contact-card {
-    top: 200px !important;
-}
+
 /* =========================================================
    EASTERN MEADOWS - FINAL HERO LAYOUT
    ========================================================= */
@@ -2901,22 +2817,7 @@ MOBILE
    ========================================================= */
 
 /* Override all previous duplicate contact-card rules */
-.hero-contact-card {
-    position: absolute !important;
 
-    top: 50% !important;
-    right: max(50px, calc((100vw - 1200px) / 2)) !important;
-
-    width: 330px !important;
-
-    transform: translateY(-50%) !important;
-
-    padding: 25px 28px 22px !important;
-
-    border-radius: 14px !important;
-
-    z-index: 20 !important;
-}
 
 /* =========================================================
    AMENITIES - MOVE INTO THE LOWER EMPTY SPACE
@@ -5804,17 +5705,7 @@ header#header .location {
    KEEP FORM ON RIGHT
    ========================================================= */
 
-.hero-contact-card {
-    position: absolute !important;
 
-    right: 7% !important;
-    left: auto !important;
-
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-
-    z-index: 10 !important;
-}
 
 /* =========================================================
    AMENITIES BELOW HERO CONTENT
@@ -7410,68 +7301,83 @@ header#header .location {
         font-size: 10px !important;
     }
 }
+
 /* =========================================================
-   FINAL MOBILE FIX
-   HERO → CONTACT → OVERVIEW
+   FINAL MOBILE CALLBACK FIX - AUTHORITATIVE
    ========================================================= */
 
-@media screen and (max-width: 600px) {
-
-    /* Keep hero as the first section */
-    #home.hero {
-        position: relative !important;
-        height: 100svh !important;
-        min-height: 100svh !important;
-        margin-bottom: 440px !important;
-        overflow: visible !important;
-        box-sizing: border-box !important;
-    }
-
-    /* CONTACT FORM — place AFTER hero */
+/* Desktop: keep the callback card on the right side of the hero */
+@media screen and (min-width: 801px) {
     #home .hero-contact-card {
         position: absolute !important;
-
-        top: calc(100svh + 20px) !important;
-
-        left: 15px !important;
-        right: 15px !important;
-
-        width: auto !important;
-        max-width: none !important;
-
+        top: 50% !important;
+        right: 7% !important;
+        left: auto !important;
+        bottom: auto !important;
+        transform: translateY(-50%) !important;
+        width: 330px !important;
+        max-width: 330px !important;
         margin: 0 !important;
-        transform: none !important;
-
-        z-index: 100 !important;
-
-        box-sizing: border-box !important;
-    }
-
-    /* Make sure Overview stays below contact area */
-    #overview {
-        position: relative !important;
-        z-index: 1 !important;
-        margin-top: 0 !important;
-        clear: both !important;
+        z-index: 20 !important;
     }
 }
 
-
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
-
-@media screen and (max-width: 380px) {
+/* Mobile: callback becomes normal content after the hero amenities */
+@media screen and (max-width: 800px) {
 
     #home.hero {
-        min-height: 100svh !important;
-        height: 100svh !important;
-        margin-bottom: 425px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 20px !important;
+        overflow: visible !important;
+    }
+
+    #home .hero-amenities {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        margin: 30px 0 20px !important;
     }
 
     #home .hero-contact-card {
-        top: calc(100svh + 15px) !important;
-        left: 10px !important;
-        right: 10px !important;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+
+        display: block !important;
+        width: calc(100% - 30px) !important;
+        max-width: 420px !important;
+
+        margin: 30px auto 30px !important;
+        box-sizing: border-box !important;
+
+        z-index: 20 !important;
+    }
+
+    #overview {
+        position: relative !important;
+        clear: both !important;
+        margin-top: 0 !important;
+        z-index: 1 !important;
+    }
+
+    .ticker {
+        position: relative !important;
+        z-index: 2 !important;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #home .hero-contact-card {
+        width: calc(100% - 20px) !important;
     }
 }
